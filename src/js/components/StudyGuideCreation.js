@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import IndexCards from './IndexCards';
+import StudyGuide from './StudyGuide';
 
 var studyGuides = [
     {"name": 'Geography',
@@ -48,18 +49,19 @@ export default class StudyGuideCreation extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                <input type="text"
-                       className="form"
-                       value={this.state.value}
-                       onChange={ this.handleChange }
-                       placeholder="Example: 'Geography'..."></input>
+                {/*<input type="text"*/}
+                       {/*className="form"*/}
+                       {/*value={this.state.value}*/}
+                       {/*onChange={ this.handleChange }*/}
+                       {/*placeholder="Example: 'Geography'..."></input>*/}
 
                 <input type="submit" name="name"
-                   className="createStudyGuide" value="Create Study Guide"
+                   className="createStudyGuide" value="Start Studying"
                     onClick={ this.displayCards }></input>
-                    { this.state.cardsCreated && <Success name={this.state.value}/> }
-                    { this.state.displayIndexCards && <IndexCards/> }
+                    {/*{ this.state.cardsCreated && <Success name={this.state.value}/> }*/}
                 </form>
+                    {/*{ this.state.displayIndexCards && <IndexCards/> }*/}
+                    { this.state.displayIndexCards && <StudyGuide/> }
             </div>
 
         )

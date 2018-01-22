@@ -5,7 +5,7 @@ export default class Welcome extends Component{
         return (
             <div>
                 <h1 className="title">Welcome</h1>
-                <p>Begin by entering a title for your study guide.</p>
+                {/*<p>Begin by entering a title for your study guide.</p>*/}
             </div>
         );
     }
