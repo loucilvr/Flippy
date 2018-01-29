@@ -26,8 +26,8 @@ export default class StudyGuide extends Component {
 
     showNextCard(){
         this.setState({
-            showQuestion : !this.state.showQuestion,
-            showAnswer : !this.state.showAnswer,
+            showQuestion : true,
+            showAnswer : false,
             card : this.state.card + 1})
     }
 
@@ -36,8 +36,6 @@ export default class StudyGuide extends Component {
     }
 
     render() {
-        console.log(cards[0].question);
-
         return(
             <div>
                  <div className="questionCard" key={this.state.card}>
