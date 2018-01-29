@@ -58,7 +58,7 @@ hr {
   font-family: 'Helvetica Neue', sans-serif !important;
   background-color: #fff;
   color: #3b3b3b;
-  width: auto;
+  width: 500px;
   height: 230px;
   padding: 50px 20px;
   margin-left: 10px;
@@ -93,4 +93,9 @@ hr {
   font-size: 13px;
   border-radius: 4px;
   float: left;
+}
+
+.navigate {
+  width: 550px;
+  height: 90px;
 }

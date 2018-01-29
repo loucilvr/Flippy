@@ -44,12 +44,14 @@ export default class StudyGuide extends Component {
                          { this.state.showAnswer && cards[this.state.card].answer }
                      </div>
                  </div>
+                <div className="navigate">
                  <input type="submit" name="name"
                         className="startOver" value="Start Over"
                         onClick={ this.startOver }></input>
                  <input type="submit" name="name"
                         className="nextCard" value="Next Question"
                         onClick={ this.showNextCard }></input>
+                </div>
             </div>
         )
     }
