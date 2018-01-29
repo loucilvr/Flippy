@@ -34,7 +34,6 @@ export default class StudyGuideCreation extends Component {
     handleSubmit(event) {
         var name = this.state.value;
         studyGuides.push(name);
-        // console.log(studyGuides);
         event.preventDefault();
     }
 

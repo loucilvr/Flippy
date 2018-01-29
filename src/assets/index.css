@@ -4,6 +4,7 @@ body {
   /*color: #3f3f3f;*/
   height: 100%;
   color: #fff;
+  width: 70%;
 }
 
 html {
@@ -12,6 +13,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
 }
 
 .left {

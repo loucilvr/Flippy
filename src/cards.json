@@ -1,42 +1,38 @@
 [
   {
-    "id": 1,
-    "question" : "Who is the current President of the United States?",
-    "answer" : "Donald Trump"
-  }, {
-  "id": 2,
+  "id": 1,
   "question" : "What is the supreme law of the land?",
   "answer" : "The Constitution"
 }, {
-  "id": 3,
+  "id": 2,
   "question" : "What does the Constitution do?",
   "answer" : "(1) sets up the government (2) defines the government (3) protects basic rights of Americans"
 }, {
-  "id": 4,
+  "id": 3,
   "question" : "The idea of self-government is in the first three words of the Constitution. What are these words?",
   "answer" : "We the people"
 }, {
-  "id": 5,
+  "id": 4,
   "question" : "What is an amendment?",
   "answer" : "a change/addition to the Constitution"
 }, {
-  "id": 6,
+  "id": 5,
   "question" : "What do we call the first ten amendments to the Constitution?",
   "answer" : "Bill of Rights"
 }, {
-  "id": 7,
+  "id": 6,
   "question" : "What is one right or freedom from the First Amendment?",
   "answer" : "speech, religion, assembly, press, petition the government"
 }, {
-  "id": 8,
+  "id": 7,
   "question" : "How many amendments does the Constitution have?",
   "answer" : "27"
 }, {
-  "id": 9,
+  "id": 8,
   "question" : "What did the Declaration of Independence do?",
   "answer" : "announced/declared our independence from Great Britain"
 }, {
-  "id": 10,
+  "id": 9,
   "question" : "What are 2 rights in the Declaration of Independence?",
   "answer" : "life, liberty, pursuit of happiness"
 }

@@ -7,59 +7,52 @@ export default class StudyGuide extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            "showAnswer" : false
+            showQuestion : true,
+            showAnswer : false,
+            card: 0,
         }
-        this.showAnswer = this.showAnswer.bind(this);
+        this.flipCard = this.flipCard.bind(this);
+        this.showNextCard = this.showNextCard.bind(this);
+        this.startOver = this.startOver.bind(this);
+
     }
 
-    showAnswer(props) {
-        this.setState({ showAnswer : !this.state.showAnswer })
+     flipCard() {
+        console.log('hi')
+        this.setState({
+            showQuestion : !this.state.showQuestion,
+            showAnswer : !this.state.showAnswer })
+    }
+
+    showNextCard(){
+        this.setState({
+            showQuestion : !this.state.showQuestion,
+            showAnswer : !this.state.showAnswer,
+            card : this.state.card + 1})
+    }
+
+    startOver(){
+        location.reload()
     }
 
     render() {
-        console.log(json);
+        console.log(cards[0].question);
 
         return(
             <div>
-                { cards.map((e,i) =>
-                    <div className="questionCard" key={i} onClick={event => this.showAnswer(i)}>
-                        <div> { e.question }</div>
-                        { this.state.showAnswer && <Answer id={i} answer={ e.answer }/> }
-                    </div>
-                )}
+                 <div className="questionCard" key={this.state.card}>
+                     <div onClick={this.flipCard}>
+                         { this.state.showQuestion && cards[this.state.card].question }
+                         { this.state.showAnswer && cards[this.state.card].answer }
+                     </div>
+                 </div>
+                 <input type="submit" name="name"
+                        className="startOver" value="Start Over"
+                        onClick={ this.startOver }></input>
+                 <input type="submit" name="name"
+                        className="nextCard" value="Next Question"
+                        onClick={ this.showNextCard }></input>
             </div>
-        )
-    }
-}
-//
-// class Cards extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             showAnswer: false
-//         }
-//         this.showAnswer = this.showAnswer.bind(this);
-//     }
-//
-//     showAnswer(props) {
-//         this.setState({ showAnswer : true })
-//     }
-//
-//     render(props) {
-//
-//         return(
-//             <div className="questionCard">
-//                <div> { this.props.question }</div>
-//                 { this.state.showAnswer && <Answer answer={ this.props.answer }/> }
-//             </div>
-//         )
-//     }
-// }
-
-class Answer extends Component {
-    render() {
-        return (
-            <div className="answerText"> Answer: {this.props.answer } </div>
         )
     }
 }
