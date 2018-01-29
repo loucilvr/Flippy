@@ -14,6 +14,7 @@ export default class StudyGuide extends Component {
         this.flipCard = this.flipCard.bind(this);
         this.showNextCard = this.showNextCard.bind(this);
         this.startOver = this.startOver.bind(this);
+        this.randomize = this.randomize.bind(this);
 
     }
 
@@ -29,6 +30,20 @@ export default class StudyGuide extends Component {
             showQuestion : true,
             showAnswer : false,
             card : this.state.card + 1})
+        if (this.state.card > cards.length) {
+            this.setState({ card: 0 });
+        }
+    }
+
+    randomize() {
+        let min = Math.ceil(0);
+        let max = Math.floor(cards.length);
+        var cardNum = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+        this.setState({
+            showQuestion: true,
+            showAnswer: false,
+            card: cardNum
+        });
     }
 
     startOver(){
@@ -48,6 +63,9 @@ export default class StudyGuide extends Component {
                  <input type="submit" name="name"
                         className="startOver" value="Start Over"
                         onClick={ this.startOver }></input>
+                 <input type="submit" name="name"
+                        className="startOver" value="Randomize"
+                        onClick={ this.randomize }></input>
                  <input type="submit" name="name"
                         className="nextCard" value="Next Question"
                         onClick={ this.showNextCard }></input>
