@@ -34,7 +34,7 @@ export default class StudyGuideCreation extends Component {
     handleSubmit(event) {
         var name = this.state.value;
         studyGuides.push(name);
-        console.log(studyGuides);
+        // console.log(studyGuides);
         event.preventDefault();
     }
 
@@ -49,19 +49,19 @@ export default class StudyGuideCreation extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                {/*<input type="text"*/}
-                       {/*className="form"*/}
-                       {/*value={this.state.value}*/}
-                       {/*onChange={ this.handleChange }*/}
-                       {/*placeholder="Example: 'Geography'..."></input>*/}
+                    {/*<input type="text"*/}
+                    {/*className="form"*/}
+                    {/*value={this.state.value}*/}
+                    {/*onChange={ this.handleChange }*/}
+                    {/*placeholder="Example: 'Geography'..."></input>*/}
 
-                <input type="submit" name="name"
-                   className="createStudyGuide" value="Start Studying"
-                    onClick={ this.displayCards }></input>
+                    <input type="submit" name="name"
+                           className="createStudyGuide" value="Start Studying"
+                           onClick={ this.displayCards }></input>
                     {/*{ this.state.cardsCreated && <Success name={this.state.value}/> }*/}
                 </form>
-                    {/*{ this.state.displayIndexCards && <IndexCards/> }*/}
-                    { this.state.displayIndexCards && <StudyGuide/> }
+                {/*{ this.state.displayIndexCards && <IndexCards/> }*/}
+                { this.state.displayIndexCards && <StudyGuide/> }
             </div>
 
         )
@@ -73,7 +73,7 @@ class Success extends Component {
         return (
             <div>
                 <h4>Successfully created study guide for <span className="guideName">{ this.props.name }</span>!</h4>
-     </div>
+            </div>
         )
     }
 }
