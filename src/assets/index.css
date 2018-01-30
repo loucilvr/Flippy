@@ -9,7 +9,8 @@ body {
 }
 
 html {
-  background: -webkit-linear-gradient(40deg, #00d2ff, #38bce2, #43b3f2);
+  background: -webkit-linear-gradient(40deg, #02bde5, #21c0ed, #3eb1f2);
+  /*background: -webkit-linear-gradient(40deg, #00d2ff, #38bce2, #43b3f2);*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

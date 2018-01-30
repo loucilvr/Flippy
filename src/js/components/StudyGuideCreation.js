@@ -55,7 +55,7 @@ export default class StudyGuideCreation extends Component {
                     {/*placeholder="Example: 'Geography'..."></input>*/}
 
                     <input type="submit" name="name"
-                           className="createStudyGuide" value="Start Studying"
+                           className="startStudying" value="START STUDYING"
                            onClick={ this.displayCards }></input>
                     {/*{ this.state.cardsCreated && <Success name={this.state.value}/> }*/}
                 </form>

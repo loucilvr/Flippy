@@ -9,10 +9,12 @@ export default class StudyGuide extends Component {
         this.state = {
             showQuestion : true,
             showAnswer : false,
-            card: 0,
+            prevCard: null,
+            currCard: 0
         }
         this.flipCard = this.flipCard.bind(this);
         this.showNextCard = this.showNextCard.bind(this);
+        this.showPreviousCard = this.showPreviousCard.bind(this);
         this.startOver = this.startOver.bind(this);
         this.randomize = this.randomize.bind(this);
 
@@ -29,9 +31,22 @@ export default class StudyGuide extends Component {
         this.setState({
             showQuestion : true,
             showAnswer : false,
-            card : this.state.card + 1})
-        if (this.state.card > cards.length) {
-            this.setState({ card: 0 });
+            prevCard: this.state.currCard,
+            currCard : this.state.currCard + 1})
+        if (this.state.currCard > cards.length) {
+            this.setState({ currCard: 0 });
+        }
+    }
+
+    showPreviousCard(){
+        this.setState({
+            showQuestion : true,
+            showAnswer : false,
+            prevCard: this.state.currCard,
+            currCard: this.state.prevCard
+        })
+        if (this.state.currCard > cards.length) {
+            this.setState({ currCard: 0 });
         }
     }
 
@@ -42,7 +57,8 @@ export default class StudyGuide extends Component {
         this.setState({
             showQuestion: true,
             showAnswer: false,
-            card: cardNum
+            prevCard: this.state.currCard,
+            currCard: cardNum
         });
     }
 
@@ -53,20 +69,23 @@ export default class StudyGuide extends Component {
     render() {
         return(
             <div>
-                 <div className="questionCard" key={this.state.card} onClick={this.flipCard}>
-                         { this.state.showQuestion && cards[this.state.card].question }
-                         { this.state.showAnswer && cards[this.state.card].answer }
+                 <div className="questionCard" key={this.state.currCard} onClick={this.flipCard}>
+                         { this.state.showQuestion && cards[this.state.currCard].question }
+                         { this.state.showAnswer && cards[this.state.currCard].answer }
                  </div>
                 <div className="navigate">
                  <input type="submit" name="name"
-                        className="startOver" value="Start Over"
+                        className="resetRandomizeBtns" value="Start Over"
                         onClick={ this.startOver }></input>
                  <input type="submit" name="name"
-                        className="startOver" value="Randomize"
+                        className="resetRandomizeBtns" value="Randomize"
                         onClick={ this.randomize }></input>
-                 <input type="submit" name="name"
-                        className="nextCard" value="Next Question"
+                <input type="submit" name="name"
+                        className="prevNextCardBtn" value="NEXT"
                         onClick={ this.showNextCard }></input>
+                <input type="submit" name="name"
+                        className="prevNextCardBtn" value="PREVIOUS "
+                        onClick={ this.showPreviousCard }></input>
                 </div>
             </div>
         )
