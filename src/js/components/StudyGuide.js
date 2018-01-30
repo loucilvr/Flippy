@@ -53,11 +53,9 @@ export default class StudyGuide extends Component {
     render() {
         return(
             <div>
-                 <div className="questionCard" key={this.state.card}>
-                     <div onClick={this.flipCard}>
+                 <div className="questionCard" key={this.state.card} onClick={this.flipCard}>
                          { this.state.showQuestion && cards[this.state.card].question }
                          { this.state.showAnswer && cards[this.state.card].answer }
-                     </div>
                  </div>
                 <div className="navigate">
                  <input type="submit" name="name"

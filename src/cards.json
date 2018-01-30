@@ -79,5 +79,25 @@
     "id": 20,
     "question" : "Who is one of your state's US Senators now?",
     "answer" : "Marco Rubio"
+  }, {
+    "id": 21,
+    "question" : "The House of Representatives has how many voting members?",
+    "answer" : "435"
+  }, {
+    "id": 22,
+    "question" : "We elect a US Representative for how many years?",
+    "answer" : "2 years"
+  }, {
+    "id": 23,
+    "question" : "Name your US Representative.",
+    "answer" : "Dennis A. Ross"
+  }, {
+    "id": 24,
+    "question" : "Who does a US Senator represent?",
+    "answer" : "all people of the state"
+  }, {
+    "id": 25,
+    "question" : "Why do some states have more Representatives than other states?",
+    "answer" : "Because some states have more people"
   }
 ]
