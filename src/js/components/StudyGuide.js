@@ -28,14 +28,17 @@ export default class StudyGuide extends Component {
     }
 
     showNextCard(){
+        var nextCard = this.state.currCard + 1;
+
+        if (nextCard  > cards.length) {
+            this.setState({ currCard: 0 });
+        } else
         this.setState({
             showQuestion : true,
             showAnswer : false,
             prevCard: this.state.currCard,
-            currCard : this.state.currCard + 1})
-        if (this.state.currCard > cards.length) {
-            this.setState({ currCard: 0 });
-        }
+            currCard : nextCard
+        })
     }
 
     showPreviousCard(){

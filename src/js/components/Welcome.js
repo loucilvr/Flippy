@@ -5,7 +5,7 @@ export default class Welcome extends Component{
         return (
             <div>
                 <h1 className="title">Welcome to Flippy</h1>
-                <p>Begin flipping through your study guide by clicking the button below.</p>
+                <p>Begin flipping through your flash cards by clicking the button below.</p>
             </div>
         );
     }
