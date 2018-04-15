@@ -1,16 +1,14 @@
 body {
   margin: 20px 40px;
   font-family: 'Roboto Condensed', sans-serif;
-  /*color: #3f3f3f;*/
   height: 100%;
   color: #fff;
-  width: 55%;
   overflow-y: hidden;
 }
 
 html {
-  background: -webkit-linear-gradient(40deg, #02bde5, #21c0ed, #3eb1f2);
-  /*background: -webkit-linear-gradient(40deg, #00d2ff, #38bce2, #43b3f2);*/
+  background: -webkit-linear-gradient(40deg, #0052a2, #3575ce, #39a4e1);
+  /*background: -webkit-linear-gradient(40deg, #02bde5, #21c0ed, #3eb1f2);*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
