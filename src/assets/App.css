@@ -4,6 +4,10 @@
   margin-top: 50px;
 }
 
+.flashCards {
+  margin-top: 50px;
+}
+
 .form {
   width: 400px;
   height: 34px;
@@ -44,63 +48,56 @@
   font-weight: 300;
   letter-spacing: 1px;
 }
-
-.guideName {
-  color: green;
+.paper{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.23), 0 1px 2px rgba(0, 0, 0, 0.29);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.indexCardLabel {
-  width: 20px;
-}
-
-.question {
-  font-size: 35px;
-}
-
-.question, .answer  {
-  margin-bottom: 20px;
-}
-
-.cardForms {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.addCards {
-  margin-left: 335px;
-  height: 32px;
-  vertical-align: middle;
-  font-size: 13px;
-}
-
-hr {
-  border-width: 0.5px;
-  margin-bottom: 30px;
-}
-
-.more {
-  height: 100px;
-}
-
-.questionCard {
-  font-family: 'Helvetica Neue', sans-serif !important;
+.flashCard {
+  font-family: 'Helvetica Neue', sans-serif;
   background-color: #fff;
   color: #3b3b3b;
   width: 500px;
   height: 230px;
   padding: 50px 30px;
-  margin-left: 10px;
-  margin-top: 25px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.23), 0 1px 2px rgba(0, 0, 0, 0.29);
-  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-  font-size: 25px;
+  overflow-wrap: break-word;
 }
 
-.answerText {
-  margin-top: 45px;
-  font-size: 20px;
-  font-weight: 100;
-  letter-spacing: 1px;
+.question {
+  font-size: 24px;
+}
+
+.answer {
+  color: #2c9a00;
+}
+
+
+.actionBtn {
+  margin-top: 15px;
+  margin-right: 10px;
+  height: 38px;
+  vertical-align: middle;
+  font-size: 13px;
+  border-radius: 34px;
+  float: left;
+  width: 110px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+
+.actionBtn:hover {
+  margin-top: 15px;
+  height: 38px;
+  vertical-align: middle;
+  font-size: 13px;
+  border-radius: 34px;
+  float: left;
+  width: 110px;
+  background-color: #fff;
+  border: 2px solid #fff;
+  color: #1cb6ed;
 }
 
 .prevNextCardBtn {
@@ -114,9 +111,6 @@ hr {
   background-color: #fff;
   border: none;
   color: #1cb6ed;
-  /*background-color: transparent;*/
-  /*border: 2px solid #fff;*/
-  /*color: #fff;*/
   float: right;
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -132,29 +126,33 @@ hr {
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
-  /*background-color: transparent;*/
-  /*border: 2px solid #fff;*/
-  /*color: #fff;*/
   float: right;
   font-weight: 300;
   letter-spacing: 1.5px;
 }
 
-.resetRandomizeBtns {
-  margin-top: 15px;
-  margin-left: 10px;
-  height: 38px;
-  vertical-align: middle;
-  font-size: 13px;
-  border-radius: 34px;
-  float: left;
-  width: 110px;
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
 .navigate {
   width: 570px;
-  height: 90px;
+  height: 70px;
+}
+
+@media (max-width: 768px) {
+  .question {
+    font-size: 16px;
+  }
+
+  .answerText {
+    font-size: 16px;
+  }
+
+  .questionCard {
+    width: 100%;
+  }
+
+  .navigate {
+    width: 100%;
+  }
+  input {
+    width: 15%;
+  }
 }

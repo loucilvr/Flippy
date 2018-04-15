@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import json from '../../cards.json';
 
-const json = require('../../cards.json');
 const cards = JSON.parse(JSON.stringify(json));
 
 export default class StudyGuide extends Component {
@@ -12,24 +13,20 @@ export default class StudyGuide extends Component {
             prevCard: null,
             currCard: 0
         }
-        this.flipCard = this.flipCard.bind(this);
+        this.toggleAnswer = this.toggleAnswer.bind(this);
         this.showNextCard = this.showNextCard.bind(this);
         this.showPreviousCard = this.showPreviousCard.bind(this);
         this.startOver = this.startOver.bind(this);
         this.randomize = this.randomize.bind(this);
-
     }
 
-     flipCard() {
-        console.log('hi')
+     toggleAnswer() {
         this.setState({
-            showQuestion : !this.state.showQuestion,
             showAnswer : !this.state.showAnswer })
     }
 
     showNextCard(){
         var nextCard = this.state.currCard + 1;
-
         if (nextCard  > cards.length) {
             this.setState({ currCard: 0 });
         } else
@@ -72,23 +69,44 @@ export default class StudyGuide extends Component {
     render() {
         return(
             <div>
-                 <div className="questionCard" key={this.state.currCard} onClick={this.flipCard}>
-                         { this.state.showQuestion && cards[this.state.currCard].question }
-                         { this.state.showAnswer && cards[this.state.currCard].answer }
-                 </div>
-                <div className="navigate">
-                 <input type="submit" name="name"
-                        className="resetRandomizeBtns" value="Start Over"
-                        onClick={ this.startOver }></input>
-                 <input type="submit" name="name"
-                        className="resetRandomizeBtns" value="Randomize"
-                        onClick={ this.randomize }></input>
-                <input type="submit" name="name"
-                        className="prevNextCardBtn" value="NEXT"
-                        onClick={ this.showNextCard }></input>
-                <input type="submit" name="name"
-                        className="prevNextCardBtn" value="PREVIOUS "
-                        onClick={ this.showPreviousCard }></input>
+                <h1 className="title">Flippy</h1>
+                <div className="flashCards">
+                    <div className="navigate">
+                    <Link to="/">
+                        <input type="submit"
+                           className="actionBtn"
+                           value="Home"
+                       />
+                    </Link>
+                    <input type="submit"
+                           className="actionBtn"
+                           value="Start Over"
+                           onClick={ this.startOver }></input>
+                    </div>
+                     <div className="flashCard paper" key={this.state.currCard} onClick={this.toggleAnswer}>
+                           <span className="question">
+                               { this.state.showQuestion && cards.cards[this.state.currCard].question }</span>
+                            <h2 className="answer">
+                                { this.state.showAnswer && cards.cards[this.state.currCard].answer }
+                            </h2>
+                            <br/>
+                            {  this.state.showAnswer && cards.cards[this.state.currCard].link
+                                && <a href="https://www.govtrack.us/congress/members/FL#representatives">
+                                www.govtrack.us</a> }
+
+                     </div>
+
+                    <div className="navigate">
+                     <input type="submit" name="name"
+                            className="actionBtn" value="Randomize"
+                            onClick={ this.randomize }></input>
+                    <input type="submit" name="name"
+                            className="prevNextCardBtn" value="NEXT"
+                            onClick={ this.showNextCard }></input>
+                    <input type="submit" name="name"
+                            className="prevNextCardBtn" value="PREVIOUS "
+                            onClick={ this.showPreviousCard }></input>
+                    </div>
                 </div>
             </div>
         )
