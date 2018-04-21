@@ -34,7 +34,7 @@ export default class StudyGuide extends Component {
         const nextCard = this.state.currentCard + 1;
         const questionCard = nextCard+1;
         if (this.state.currentCard === (data.cards.length - 1)) {
-            this.setState({currentCard: 0});
+            this.setState({currentCard: 0, questionNum: 1});
         } else {
             this.setState({
                 showQuestion: true,
@@ -49,7 +49,7 @@ export default class StudyGuide extends Component {
         const prevCard = this.state.currentCard - 1;
         const questionCard = prevCard+1;
         if (prevCard < 0) {
-            this.setState({ currentCard: 99 });
+            this.setState({ currentCard: 99, questionNum: 99 });
         } else {
             this.setState({
                 showQuestion: true,
