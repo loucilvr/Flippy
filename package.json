@@ -2,7 +2,7 @@
   "name": "Flippy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://loucilvr.github.io/flippy",
+  "homepage": "https://loucilvr.github.io/flippy",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "react": "^16.3.2",
