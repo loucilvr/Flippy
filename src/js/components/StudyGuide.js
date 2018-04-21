@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import json from '../../cards.json';
+import flashCards from '../../cards.json';
 
-const data = json;
+const data = flashCards;
+console.log(data);
 
 export default class StudyGuide extends Component {
     // test
@@ -14,8 +15,8 @@ export default class StudyGuide extends Component {
         this.state = {
             showQuestion : true,
             showAnswer : false,
-            prevCard: null,
-            currCard: 0,
+            currentCard: 0,
+            questionNum: 1
         }
         this.toggleAnswer = this.toggleAnswer.bind(this);
         this.showNextCard = this.showNextCard.bind(this);
@@ -30,29 +31,31 @@ export default class StudyGuide extends Component {
     }
 
     showNextCard() {
-        var nextCard = this.state.currCard + 1;
-        if (this.state.currCard === (data.cards.length - 1)) {
-            this.setState({currCard: 0});
+        const nextCard = this.state.currentCard + 1;
+        const questionCard = nextCard+1;
+        if (this.state.currentCard === (data.cards.length - 1)) {
+            this.setState({currentCard: 0});
         } else {
             this.setState({
                 showQuestion: true,
                 showAnswer: false,
-                prevCard: this.state.currCard,
-                currCard: nextCard
+                currentCard: nextCard,
+                questionNum: questionCard
             });
         }
     }
 
     showPreviousCard(){
-        const oldCard = this.state.currCard - 1;
-        if (oldCard < 0) {
-            this.setState({ currCard: 0 });
+        const prevCard = this.state.currentCard - 1;
+        const questionCard = prevCard+1;
+        if (prevCard < 0) {
+            this.setState({ currentCard: 99 });
         } else {
             this.setState({
                 showQuestion: true,
                 showAnswer: false,
-                prevCard: this.state.currCard,
-                currCard: oldCard
+                currentCard: prevCard,
+                questionNum: questionCard
             });
         }
     }
@@ -60,16 +63,17 @@ export default class StudyGuide extends Component {
     randomize() {
         let min = Math.ceil(0);
         let max = Math.floor(data.cards.length);
-        var cardNum = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-        if (cardNum >= data.cards.length || cardNum === 'undefined') {
+        var randomCard = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+        if (randomCard >= data.cards.length || randomCard === 'undefined') {
             this.randomize();
         }
-        console.log(cardNum);
+        console.log(randomCard);
+        const questionCard = randomCard+1;
         this.setState({
             showQuestion: true,
             showAnswer: false,
-            prevCard: this.state.currCard,
-            currCard: cardNum
+            currentCard: randomCard,
+            questionNum: questionCard
         });
     }
 
@@ -94,16 +98,19 @@ export default class StudyGuide extends Component {
                            onClick={ this.startOver }></input>
                     </div>
                 <div className="flashCards">
+                    <div className="questionNum" style={{float: 'right', marginBottom: 10}}>{this.state.questionNum}/100</div>
                 <div className="flashCard paper" onClick={this.toggleAnswer}>
+                    <div style={{padding: 40}}>
                            <span className="question">
-                               { this.state.showQuestion && data.cards[this.state.currCard].question }</span>
+                               { this.state.showQuestion && data.cards[this.state.currentCard].question }</span>
                             <h2 className="answer">
-                                { this.state.showAnswer && data.cards[this.state.currCard].answer }
+                                { this.state.showAnswer && data.cards[this.state.currentCard].answer }
                             </h2>
                             <br/>
-                            {  this.state.showAnswer && data.cards[this.state.currCard].link
+                            {  this.state.showAnswer && data.cards[this.state.currentCard].link
                                 && <a href="https://www.govtrack.us/congress/members/FL#representatives" target="_blank">
                                 www.govtrack.us</a> }
+                    </div>
                      </div>
 
                     <div className="navigate">
@@ -118,6 +125,7 @@ export default class StudyGuide extends Component {
                             onClick={ this.randomize }></input>
                         </div>
                 </div>
+
                 <div className="info">
                     Online Resources:<br/>
                     <a href="https://www.uscis.gov/citizenship/teachers/educational-products/100-civics-questions-and-answers-mp3-audio-english-version"
