@@ -1,18 +1,19 @@
 body {
-  margin: 20px 40px;
+  margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
   height: 100%;
   color: #fff;
   overflow-y: hidden;
 }
-
 html {
-  background: -webkit-linear-gradient(80deg, #3575ce, #39a4e1);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: #3b65a9;
+  /*background: -webkit-linear-gradient(80deg, #3575ce, #39a4e1);*/
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
   background-size: cover;
   height: 100%;
+  margin: 0;
 }
 
 .left {
