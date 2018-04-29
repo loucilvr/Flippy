@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import flashCards from '../../cards.json';
 
 const data = flashCards;
-console.log(data);
+// console.log(data);
 
 export default class StudyGuide extends Component {
     // test
@@ -67,7 +67,7 @@ export default class StudyGuide extends Component {
         if (randomCard >= data.cards.length || randomCard === 'undefined') {
             this.randomize();
         }
-        console.log(randomCard);
+        // console.log(randomCard);
         const questionCard = randomCard+1;
         this.setState({
             showQuestion: true,
@@ -97,33 +97,33 @@ export default class StudyGuide extends Component {
                            value="Start Over"
                            onClick={ this.startOver }></input>
                     </div>
-                <div className="flashCards">
-                    <div className="questionNum" style={{float: 'right', marginBottom: 10}}>{this.state.questionNum}/100</div>
-                <div className="flashCard paper" onClick={this.toggleAnswer}>
-                    <div style={{padding: 40}}>
-                           <span className="question">
-                               { this.state.showQuestion && data.cards[this.state.currentCard].question }</span>
-                            <h2 className="answer">
-                                { this.state.showAnswer && data.cards[this.state.currentCard].answer }
-                            </h2>
-                            <br/>
-                            {  this.state.showAnswer && data.cards[this.state.currentCard].link
-                                && <a href="https://www.govtrack.us/congress/members/FL#representatives" target="_blank">
-                                www.govtrack.us</a> }
-                    </div>
-                     </div>
+                <div className="questionNum">{this.state.questionNum}/100</div>
 
-                    <div className="navigate">
-                        <input type="submit" name="name"
+                <div className="flashCards">
+                    <div className="flashCard paper" onClick={this.toggleAnswer}>
+                        <div style={{padding: 40}}>
+                               <span className="question">
+                                   { this.state.showQuestion && data.cards[this.state.currentCard].question }</span>
+                                <h2 className="answer">
+                                    { this.state.showAnswer && data.cards[this.state.currentCard].answer }
+                                </h2>
+                                <br/>
+                                {  this.state.showAnswer && data.cards[this.state.currentCard].link
+                                    && <a href="https://www.govtrack.us/congress/members/FL#representatives" target="_blank">
+                                    www.govtrack.us</a> }
+                        </div>
+                    </div>
+                </div>
+                <div className="navigate">
+                    <input type="submit" name="name"
                            className="prevNextCardBtn" value="NEXT"
                            onClick={ this.showNextCard }></input>
-                        <input type="submit" name="name"
+                    <input type="submit" name="name"
                            className="prevNextCardBtn" value="PREVIOUS "
                            onClick={ this.showPreviousCard }></input>
-                        <input type="submit" name="name"
-                            className="actionBtn" value="Randomize"
-                            onClick={ this.randomize }></input>
-                        </div>
+                    <input type="submit" name="name"
+                           className="actionBtn" value="Randomize"
+                           onClick={ this.randomize }></input>
                 </div>
 
                 <div className="info">

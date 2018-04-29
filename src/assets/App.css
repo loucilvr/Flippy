@@ -111,7 +111,7 @@
   border-radius: 34px;
   width: 110px;
   background-color: #fff;
-  border: none;
+  border: 2px solid #fff;
   color: #1cb6ed;
   float: right;
   font-weight: 300;
@@ -119,7 +119,7 @@
 }
 .prevNextCardBtn:hover {
   margin-top: 15px;
-  margin-left: 10px;
+  margin-right: 10px;
   height: 38px;
   vertical-align: middle;
   font-size: 13px;
@@ -137,9 +137,20 @@
   height: 70px;
 }
 
+.questionNum {
+  width: 550px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 570px) {
   body {
     overflow-y: auto;
+  }
+  .questionNum {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .actionBtn {
     width: 100%;
@@ -156,21 +167,27 @@
     font-size: 18px;
   }
   .flashCard {
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    height: 250px;
     margin-bottom: 10px;
     background-color: #fff;
+  }
+  .flashCards{
+    width: 100%;
   }
 
   .navigate {
     width: 100%;
-    display: block;
     height: 115px;
   }
   .info {
     display: inline-block;
   }
   .title{
+    text-align: center;
+  }
+
+  .welcome {
     text-align: center;
   }
 }
