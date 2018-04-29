@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Welcome from './components/Welcome.js';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import StudyGuide from './components/StudyGuide';
 
 import '../assets/App.css';
