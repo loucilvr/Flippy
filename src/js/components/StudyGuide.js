@@ -127,7 +127,7 @@ export default class StudyGuide extends Component {
                 </div>
 
                 <div className="info">
-                    Online Resources:<br/>
+                    <h3>Online Resources:</h3>
                     <a href="https://www.uscis.gov/citizenship/teachers/educational-products/100-civics-questions-and-answers-mp3-audio-english-version"
                        target="_blank">
                     USCIS - Full View of Citizenship Exam Questions
