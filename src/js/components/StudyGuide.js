@@ -104,9 +104,9 @@ export default class StudyGuide extends Component {
                         <div style={{padding: 40}}>
                                <span className="question">
                                    { this.state.showQuestion && data.cards[this.state.currentCard].question }</span>
-                                <h2 className="answer">
+                                <p className="answer">
                                     { this.state.showAnswer && data.cards[this.state.currentCard].answer }
-                                </h2>
+                                </p>
                                 <br/>
                                 {  this.state.showAnswer && data.cards[this.state.currentCard].link
                                     && <a href="https://www.govtrack.us/congress/members/FL#representatives" target="_blank">
