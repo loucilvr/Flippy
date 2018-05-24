@@ -3,8 +3,8 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   height: 100%;
   color: #fff;
-  overflow-y: hidden;
 }
+
 html {
   background: #3b65a9;
   background: -webkit-linear-gradient(80deg, #4d56ce, #37a0e1);
@@ -12,6 +12,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100%;
   margin: 0;
 }
