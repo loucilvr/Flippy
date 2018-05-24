@@ -7,10 +7,10 @@ body {
 }
 html {
   background: #3b65a9;
-  /*background: -webkit-linear-gradient(80deg, #3575ce, #39a4e1);*/
-  /*-webkit-background-size: cover;*/
-  /*-moz-background-size: cover;*/
-  /*-o-background-size: cover;*/
+  background: -webkit-linear-gradient(80deg, #4d56ce, #37a0e1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100%;
   margin: 0;
