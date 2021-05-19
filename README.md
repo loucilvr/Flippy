@@ -1,4 +1,7 @@
-Flippy - A web app for flipping through study flash cards.
+Flippy - A web app for flipping through study flash cards. 
+
+https://flippy-app.herokuapp.com/
+
 
 #### Future Enhancements:
 
