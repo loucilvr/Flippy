@@ -40,7 +40,7 @@
   color: #1cb6ed;
 }
 
-@media (max-width: 570px) {
+@media (max-width: 768px) {
   .secondary {
     width: 100%;
     display: block;

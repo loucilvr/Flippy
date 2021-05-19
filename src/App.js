@@ -6,7 +6,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import StudyGuide from "./pages/StudyGuide";
+import StudyGuide from "./pages/StudyGuide/StudyGuide";
 import "./App.css";
 
 const App = () => (

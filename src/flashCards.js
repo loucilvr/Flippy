@@ -149,7 +149,7 @@ const questionsAndAnswers = [
   {
     id: 29,
     question: "Who is the current Vice President of the United States?",
-    answer: "A: Mike Pence",
+    answer: "A: Kamala Harris",
   },
   {
     id: 30,

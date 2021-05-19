@@ -3,7 +3,6 @@ button {
 }
 
 .App {
-  width: 100%;
   max-width: 640px;
   padding: 0px 24px;
 }
@@ -90,8 +89,21 @@ button {
   text-align: right;
   margin-bottom: 16px;
 }
+.welcome {
+  text-align: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
 
-@media (max-width: 570px) {
+.welcomeHeader {
+  margin-bottom: 64px;
+}
+
+@media (max-width: 768px) {
   .App {
     padding: 24px;
   }
@@ -137,15 +149,6 @@ button {
     text-align: center;
   }
 
-  .welcome {
-    text-align: center;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
   .buttonsContainer {
     display: flex;
     flex-direction: column-reverse;
@@ -154,16 +157,16 @@ button {
   }
 }
 
-.info {
+.onlineResources {
   color: #ffffff;
   padding-top: 46px;
 }
 
-.info > a {
+.onlineResources > a {
   display: block;
   color: #ffffff;
   line-height: 24px;
 }
-.info > a:hover {
+.onlineResources > a:hover {
   font-weight: bold;
 }

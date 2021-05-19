@@ -1,3 +1,3 @@
-import Flashcard from './Flashcard';
+import Flashcard from "./Flashcard";
 
 export default Flashcard;

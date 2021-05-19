@@ -7,10 +7,12 @@ const Welcome = ({ history }) => {
   const navigateToCards = () => history.push("/study");
   return (
     <div className="welcome">
-      <h1 className="title">Welcome to Flippy</h1>
-      <p>
-        Begin flipping through your flash cards by clicking the button below.
-      </p>
+      <div className="welcomeHeader">
+        <h1 className="title">Welcome to Flippy</h1>
+        <p>
+          Begin flipping through your flash cards by clicking the button below.
+        </p>
+      </div>
       <Button handleClick={navigateToCards} variant="primary">
         Start Studying
       </Button>
