@@ -47,9 +47,10 @@ class StudyGuide extends Component {
     const prevCard = this.state.currentCard - 1;
     const questionCard = prevCard + 1;
     if (prevCard < 0) {
+      const prevVal = flashCards.length - 1;
       this.setState({
-        currentCard: flashCards.length - 1,
-        questionNum: flashCards.length - 1,
+        currentCard: prevVal,
+        questionNum: prevVal,
       });
     } else {
       this.setState({
