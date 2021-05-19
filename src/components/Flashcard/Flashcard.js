@@ -11,21 +11,16 @@ const Flashcard = ({
   <div className="flashCard paper" onClick={handleClick}>
     <div className="cardContent">
       <p className="question">
-        {showQuestion && flashCards && flashCards[currentCard].question}
+        {showQuestion && flashCards[currentCard].question}
       </p>
-      <p className="answer">
-        {showAnswer && flashCards && flashCards[currentCard].answer}
-      </p>
+      <p className="answer">{showAnswer && flashCards[currentCard].answer}</p>
       <br />
       {!showAnswer && questionNum <= 5 && (
         <p className="actionHint">Click to see answer</p>
       )}
-      {showAnswer && flashCards && flashCards[currentCard].link && (
-        <a
-          href="https://www.govtrack.us/congress/members/FL#representatives"
-          target="_blank"
-        >
-          www.govtrack.us
+      {showAnswer && flashCards[currentCard].link && (
+        <a href={flashCards[currentCard].link} target="_blank">
+          {flashCards[currentCard].linkLabel}
         </a>
       )}
     </div>

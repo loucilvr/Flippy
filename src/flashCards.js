@@ -120,6 +120,7 @@ const questionsAndAnswers = [
     question: "Name your US Representative.",
     answer: "A: List of Florida representatives can be found here:",
     link: "https://www.govtrack.us/congress/members/FL#representatives",
+    linkLabel: "View FL Representatives on www.govtrack.us"
   },
   {
     id: 24,
