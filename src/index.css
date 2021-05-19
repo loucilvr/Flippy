@@ -1,8 +1,16 @@
+html,
 body {
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  padding: 0;
   height: 100%;
+  font-family: "Roboto Condensed", sans-serif;
   color: #fff;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 html {
