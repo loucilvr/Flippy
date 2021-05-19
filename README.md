@@ -1,6 +1,6 @@
-Flippy - A flash card web app for flipping through study flash cards.
+Flippy - A web app for flipping through study flash cards.
 
-Future Enhancements:
+#### Future Enhancements:
 
 - UI Redesign
 - Provide ability to input your own questions and answers (currently fixed data from US Citizenship Exam)
