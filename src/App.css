@@ -4,7 +4,7 @@ button {
 
 .App {
   width: 100%;
-  max-width: 570px;
+  max-width: 640px;
   padding: 0px 24px;
 }
 
@@ -47,7 +47,8 @@ button {
   font-family: "Helvetica Neue", sans-serif;
   color: #3b3b3b;
   width: 100%;
-  height: 300px;
+  max-width: 640px;
+  height: 340px;
   overflow-wrap: break-word;
   display: inline-block;
 }
@@ -86,9 +87,8 @@ button {
 }
 
 .questionNum {
-  width: 550px;
   text-align: right;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 570px) {
@@ -132,9 +132,7 @@ button {
     width: 100%;
     height: 115px;
   }
-  .info {
-    display: inline-block;
-  }
+
   .title {
     text-align: center;
   }
@@ -157,11 +155,15 @@ button {
 }
 
 .info {
-  padding-top: 15px;
-  color: #fff;
-  margin-bottom: 20px;
+  color: #ffffff;
+  padding-top: 46px;
 }
 
 .info > a {
-  color: #fff;
+  display: block;
+  color: #ffffff;
+  line-height: 24px;
+}
+.info > a:hover {
+  font-weight: bold;
 }
