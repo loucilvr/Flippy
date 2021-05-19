@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import flashCards from "../flashCards";
+import Button from "../components/Button";
+import Flashcard from "../components/Flashcard";
 
 class StudyGuide extends Component {
   constructor(props) {
@@ -80,53 +82,38 @@ class StudyGuide extends Component {
   }
 
   render() {
+    const { showQuestion, showAnswer, currentCard, questionNum } = this.state;
     return (
       <>
         <h1 className="title">Flippy</h1>
         <div className="navigate">
-          <button onClick={this.navigateToHome} className="actionBtn">
+          <Button handleClick={this.navigateToHome} variant="secondary">
             Home
-          </button>
-          <button className="actionBtn" onClick={this.startOver}>
+          </Button>
+          <Button handleClick={this.startOver} variant="secondary">
             Start Over
-          </button>
+          </Button>
         </div>
-        <div className="questionNum">{this.state.questionNum}/100</div>
-        <div className="flashCard paper" onClick={this.toggleAnswer}>
-          <div className="cardContent">
-            <p className="question">
-              {this.state.showQuestion &&
-                flashCards[this.state.currentCard].question}
-            </p>
-            <p className="answer">
-              {this.state.showAnswer &&
-                flashCards[this.state.currentCard].answer}
-            </p>
-            <br />
-            {!this.state.showAnswer && this.state.questionNum <= 5 && (
-              <p className="actionHint">Click to see answer</p>
-            )}
-            {this.state.showAnswer && flashCards[this.state.currentCard].link && (
-              <a
-                href="https://www.govtrack.us/congress/members/FL#representatives"
-                target="_blank"
-              >
-                www.govtrack.us
-              </a>
-            )}
-          </div>
-        </div>
+        <div className="questionNum">{questionNum}/100</div>
+        <Flashcard
+          handleClick={this.toggleAnswer}
+          showQuestion={showQuestion}
+          showAnswer={showAnswer}
+          currentCard={currentCard}
+          flashCards={flashCards}
+          questionNum={questionNum}
+        />
         <div className="buttonsContainer">
-          <button className="actionBtn" onClick={this.randomize}>
+          <Button variant="secondary" handleClick={this.randomize}>
             Randomize
-          </button>
+          </Button>
           <div className="prevNextButtons">
-            <button className="actionBtn" onClick={this.showPreviousCard}>
+            <Button variant="secondary" handleClick={this.showPreviousCard}>
               Previous
-            </button>
-            <button className="prevNextCardBtn" onClick={this.showNextCard}>
+            </Button>
+            <Button variant="primary" handleClick={this.showNextCard}>
               Next
-            </button>
+            </Button>
           </div>
         </div>
 

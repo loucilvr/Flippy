@@ -1,5 +1,7 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import Button from "../components/Button";
+import "../components/Button/Button.css";
 
 const Welcome = ({ history }) => {
   const navigateToCards = () => history.push("/study");
@@ -9,9 +11,9 @@ const Welcome = ({ history }) => {
       <p>
         Begin flipping through your flash cards by clicking the button below.
       </p>
-      <button onClick={navigateToCards} className="startStudying">
+      <Button handleClick={navigateToCards} variant="primary">
         Start Studying
-      </button>
+      </Button>
     </div>
   );
 };

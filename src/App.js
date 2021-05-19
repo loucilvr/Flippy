@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Welcome from "./components/Welcome.js";
+import Welcome from "./pages/Welcome.js";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-import StudyGuide from "./components/StudyGuide";
+import StudyGuide from "./pages/StudyGuide";
 import "./App.css";
 
 const App = () => (
