@@ -15,7 +15,7 @@ const Flashcard = ({ handleClick, showAnswer, questionNum, flashCard }) => (
       )}
       {showAnswer && flashCard && flashCard.link && (
         <a href={flashCard && flashCard.link} target="_blank">
-          {flashCards && flashCards.linkLabel}
+          {flashCard && flashCard.linkLabel}
         </a>
       )}
     </div>
