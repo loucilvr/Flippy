@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-  <div className="onlineResources">
+  <div data-testid="footer" className="onlineResources">
     <h3>Online Resources</h3>
     <a href="https://github.com/loucilvr/Flippy" target="_blank">
       View Flippy Source Code

@@ -8,13 +8,16 @@ import {
 } from "react-router-dom";
 import StudyGuide from "./pages/StudyGuide/StudyGuide";
 import "./App.css";
+import flashCards from "./flashCards";
 
 const App = () => (
   <div className="App">
     <Router>
       <Switch>
         <Route exact path="/home" component={Welcome} />
-        <Route path="/study" component={StudyGuide} />
+        <Route path="/study">
+          <StudyGuide flashCards={flashCards} />
+        </Route>
         <Redirect from="/" to="/home" />
       </Switch>
     </Router>

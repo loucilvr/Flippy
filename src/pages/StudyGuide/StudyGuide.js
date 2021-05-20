@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import flashCards from "../../flashCards";
 import Button from "../../components/Button";
 import Flashcard from "../../components/Flashcard";
 import Footer from "./Footer";
@@ -9,7 +8,6 @@ class StudyGuide extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showQuestion: true,
       showAnswer: false,
       currentCard: 0,
       questionNum: 1,
@@ -29,13 +27,13 @@ class StudyGuide extends Component {
   }
 
   showNextCard() {
+    const { flashCards } = this.props;
     const nextCard = this.state.currentCard + 1;
     const questionCard = nextCard + 1;
     if (this.state.currentCard === flashCards.length - 1) {
       this.setState({ currentCard: 0, questionNum: 1 });
     } else {
       this.setState({
-        showQuestion: true,
         showAnswer: false,
         currentCard: nextCard,
         questionNum: questionCard,
@@ -44,17 +42,18 @@ class StudyGuide extends Component {
   }
 
   showPreviousCard() {
+    const { flashCards } = this.props;
     const prevCard = this.state.currentCard - 1;
     const questionCard = prevCard + 1;
     if (prevCard < 0) {
-      const prevVal = flashCards.length - 1;
+      const prevVal = flashCards ? flashCards.length - 1 : 0;
       this.setState({
+        showAnswer: false,
         currentCard: prevVal,
-        questionNum: prevVal,
+        questionNum: flashCards.length,
       });
     } else {
       this.setState({
-        showQuestion: true,
         showAnswer: false,
         currentCard: prevCard,
         questionNum: questionCard,
@@ -63,6 +62,7 @@ class StudyGuide extends Component {
   }
 
   randomize() {
+    const { flashCards } = this.props;
     const min = Math.ceil(0);
     const max = Math.floor(flashCards.length);
     const randomCard = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
@@ -71,7 +71,6 @@ class StudyGuide extends Component {
     }
     const questionCard = randomCard + 1;
     this.setState({
-      showQuestion: true,
       showAnswer: false,
       currentCard: randomCard,
       questionNum: questionCard,
@@ -87,7 +86,8 @@ class StudyGuide extends Component {
   }
 
   render() {
-    const { showQuestion, showAnswer, currentCard, questionNum } = this.state;
+    const { showAnswer, currentCard, questionNum } = this.state;
+    const { flashCards } = this.props;
     return (
       <>
         <h1 className="title">Flippy</h1>
@@ -100,16 +100,16 @@ class StudyGuide extends Component {
           </Button>
         </div>
         <div className="questionNum">
-          {questionNum}/{flashCards.length}
+          {questionNum}/{flashCards ? flashCards.length : 0}
         </div>
-        <Flashcard
-          handleClick={this.toggleAnswer}
-          showQuestion={showQuestion}
-          showAnswer={showAnswer}
-          currentCard={currentCard}
-          flashCards={flashCards}
-          questionNum={questionNum}
-        />
+        {flashCards && (
+          <Flashcard
+            handleClick={this.toggleAnswer}
+            showAnswer={showAnswer}
+            flashCard={flashCards[currentCard]}
+            questionNum={questionNum}
+          />
+        )}
         <div className="buttonsContainer">
           <Button variant="secondary" handleClick={this.randomize}>
             Randomize
